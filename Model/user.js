@@ -5,7 +5,7 @@ const bcrypt=require('bcryptjs')
 const {Task}=require('../Model/task')
 const jwt=require('jsonwebtoken')
 const userschema=new schema({
-    _id:mongoose.Schema.Types.ObjectId,
+ _id:mongoose.Schema.Types.ObjectId,
 Name:{
     type:String,
     required:true,
@@ -24,7 +24,8 @@ Email:{
 },
 Password:{
     type:String,
-    required:true
+    required:true,
+    trim:true
 
 },
 Age:{
@@ -70,7 +71,7 @@ userschema.statics.logincredential=async function (Email,Password){
 const user=await User.findOne({Email});
 if(!user)
 {
-           return 'unable to login!!'
+           return 'Email not registered with us!!'
 }
 
 const isMatch= await bcrypt.compare(Password,user.Password)

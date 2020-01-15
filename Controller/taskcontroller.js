@@ -32,11 +32,14 @@ addtask:async (req,res)=>{
 },
 getalltask: async(req,res)=>{
 
-    const match={};
+    const match={}
+    console.log("ddddd",req.qurey.Completed)
 
-    if(req.qurey.Completed){
-        match.Completed==req.qurey.Completed==='true'
-    }
+    // if(req.qurey.Completed)
+    // {
+    //     match.Completed==req.qurey.Completed==='true'
+    // }
+
 try {
 
 await req.user.populate({

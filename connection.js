@@ -1,6 +1,6 @@
 const mongoose=require('mongoose')
 mongoose.Promise=global.Promise;
-mongoose.connect('mongodb://localhost:27017/GloifyProject',
+mongoose.connect('mongodb://localhost:27017/NodeJsBackend',
 {useCreateIndex:true,useUnifiedTopology: true , useNewUrlParser: true})
 .then(()=>{
     console.log('conneted sucessfully')

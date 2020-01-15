@@ -2,8 +2,16 @@ const express=require('express')
 const app=express()
 app.use(express())
 app.use(express.json())
+// app.use(function(req, res, next) {
+//     var err = new Error('Routh Path is not currect');
+//     err.status = 404;
+//     next(err);
+//   });
+
+  
 app.use('/user',require('./Router/userrouter'))
 app.use('/task',require('./Router/taskrouter'))
+app.use('/question',require('./Router/questionrouter'))
 module.exports={app}
 
  
